@@ -40,3 +40,20 @@ end
 def createPhoneNumber(array)
   puts '(%d%d%d) %d%d%d-%d%d%d%d' % array
 end
+
+# 6 https://www.codewars.com/kata/54b42f9314d9229fd6000d9c/train/ruby
+
+def duplicate_encode(word)
+  puts word.downcase.chars.map { |x| word.downcase.count(x) > 1 ? ')' : "("}.join
+end
+
+# 7 https://www.codewars.com/kata/54e6533c92449cc251001667/train/ruby
+
+def unique_in_order(iterable)
+  result = []
+  iterable = iterable.split("") if !iterable.is_a? Array
+  iterable.each_with_index {|x,i| result << x if iterable[i-1] != x || i == 0}
+  puts result
+end
+
+unique_in_order("AAAABBBCCDAABBB")
