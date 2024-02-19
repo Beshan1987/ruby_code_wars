@@ -56,4 +56,38 @@ def unique_in_order(iterable)
   puts result
 end
 
-unique_in_order("AAAABBBCCDAABBB")
+# 8 https://www.codewars.com/kata/587731fda577b3d1b0001196/train/ruby
+
+def convert_to_camel_case(str)
+  puts str.split.map { |word| word[0].upcase + word[1..]}.join('')
+end
+
+# 9 https://www.codewars.com/kata/5264d2b162488dc400000001/train/ruby
+
+def spin_words(string)
+  puts string.split.map { |word| word.length >= 5 ? word.reverse : word}.join(" ")
+end
+
+#the best way
+
+def spinWords(string)
+  string.gsub(/\w{5,}/, &:reverse)
+end
+
+# 10 https://www.codewars.com/kata/5277c8a221e209d3f6000b56/train/ruby
+
+def validBraces(braces)
+  (braces.length / 2).times do |i|
+  braces.sub!("{}", "")
+  braces.sub!("[]", "")
+  braces.sub!("()", "")
+end
+  braces.empty?
+end
+
+#best one
+
+def validBraces(braces)
+  while braces.gsub!(/(\(\)|\[\]|\{\})/,'') do; end
+  braces.empty?
+end
